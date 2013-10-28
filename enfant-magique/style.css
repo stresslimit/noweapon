@@ -1,0 +1,26 @@
+/**
+	Theme Name: gingras simple
+	Theme URI: http://noweapon.org/enfantmagique
+	Version: 0.1
+	Author: colin
+	Author URI: http://noweapon.org/
+
+*/
+
+@import url("fonts/fonts.css");
+
+img { vertical-align:middle; }
+a img { border:0; }
+
+body { background:#000 url(images/sitelle.jpg) 50% 30px no-repeat fixed; padding:0; margin:0; text-align:center; font-family:arial,sans-serif; font-size:16px; color:#ccc; }
+.contain { width:900px; margin:auto; text-align:left; }
+.content { padding-top:0px; padding-left:500px; position:relative; }
+h1.enfant-magique-title { text-indent:-999em;  height:135px; background:transparent url(images/enfant-magique-title.png) 50% top no-repeat; }
+
+/*h1, h2 { font-weight: normal; font-style: normal; line-height:normal; font-family: 'MuseoSlab500', sans-serif; font-size-adjust: 0.51; }*/
+body, h1, h2, div, p { font-weight: normal; font-style: normal; line-height:normal; font-family: 'MuseoSans500', sans-serif; font-size-adjust: 0.51; }
+
+h2 { margin-bottom:0; }
+p { margin-bottom:0.8em; }
+
+.post { margin-bottom:4em; }
