@@ -14,26 +14,27 @@ include_once('inc/woocommerce.php');
 add_action( 'init', 'sld_init' );
 function sld_init() {
 
-	set_post_thumbnail_size( 90, 90, true );
-    add_image_size( 'medium', 220, 220, true );
-	add_image_size( 'large', 660, 9999 );
-	add_image_size( 'fullsize', 830, 9999 );
+  add_theme_support( 'woocommerce' );
+  set_post_thumbnail_size( 90, 90, true );
+  add_image_size( 'medium', 220, 220, true );
+  add_image_size( 'large', 660, 9999 );
+  add_image_size( 'fullsize', 830, 9999 );
 
-	if ( !is_admin() && !is_login_page() ) {
+  if ( !is_admin() && !is_login_page() ) {
 
-		// scripts
-		wp_deregister_script( 'l10n' );
+    // scripts
+    wp_deregister_script( 'l10n' );
 
-		// register types
-		// $args = array( 'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ) );
-		// sld_register_post_type( 'record', $args );
-		// sld_register_post_type( 'event' );
+    // register types
+    // $args = array( 'supports' => array('title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ) );
+    // sld_register_post_type( 'record', $args );
+    // sld_register_post_type( 'event' );
 
-		if ( !is_admin() && !is_login_page() ) {
-			wp_enqueue_style( 'style', get_bloginfo('stylesheet_url') );
-			wp_enqueue_script( 'noweaponjs', get_bloginfo('template_url').'/js/noweapon.js', array('jquery'), '666' );
-		}
-	}
+    if ( !is_admin() && !is_login_page() ) {
+      wp_enqueue_style( 'style', get_bloginfo('stylesheet_url') );
+      wp_enqueue_script( 'noweaponjs', get_bloginfo('template_url').'/js/noweapon.js', array('jquery'), '666' );
+    }
+  }
 }
 
 add_action( 'admin_init', 'nw_custom_fields' );
