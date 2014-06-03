@@ -84,12 +84,11 @@ body { background:#f2f2f2 url('images/bg/diamonds.png'); }
 /* --- typography --- */
 body { color:#444; font-family:'HelveticaNeueLTStd46LightItal', 'Helvetica Nueue', helvetica, sans-serif; line-height:1.5; font-size:18px; }
 h1, h2, h3, h4, h5, h6 { font-weight:normal; }
-h1, h2, h3, h4 { font-family:'OsloLightItalic', helvetica, sans-serif; }
-h1, h2 { line-height:1.2; }
-h1 { font-size:2.0em; margin-bottom:0.5em; line-height:1.3em; }
-h1.supersize { font-size:60px; margin-bottom:0; line-height:1em; clear:both; }
+h1, h2, h3, h4 { font-family:'OsloLightItalic', helvetica, sans-serif; line-height:1.2; }
+h1 { font-size:2.0em; margin-bottom:0.5em; }
+  h1.supersize { font-size:60px; margin-bottom:0; line-height:1em; clear:both; }
 h2 { font-size:1.7em; margin-bottom:0.5em; }
-h3 { font-size:1.5em; margin-bottom:0.5em; }
+h3 { font-size:1.5em; margin-bottom:0.5em; line-height:1.3; }
 h4 { font-size:16px;; margin-bottom:0.1em; font-weight:normal; }
 h1 span, h2 span, h3 span { font-size:0.7em; color:#999; }
 
@@ -208,7 +207,6 @@ body.postid-150 .container { background-image:url('images/pg-bg/enfant-magique-t
 
 
 
-
 /*
   woocommerce
 */
@@ -219,27 +217,24 @@ body.postid-150 .container { background-image:url('images/pg-bg/enfant-magique-t
 .woocommerce_error { border-color:red; }
 
 /* product detail */
-.product .images { float:left; }
+.product .images { float:left; max-width:300px; }
+.product .price { color:inherit !important; font-size:inherit !important; }
 .product .summary { margin-left:320px; }
+.product .summary form.cart::after { clear:none !important; }
+/* FUCK WOOCOMMERCE */
+.woocommerce-page div.product div.summary { float:none !important; width:auto !important; margin-top: 2em; }
 .add-to-cart .group_table td { padding-right:1em; }
 .add-to-cart .group_table { margin-bottom:0.5em; }
 .disabled { color:#ccc; }
 
+
 /* big blue action button */
-.add-to-cart .button, .checkout-button, #place_order.button { border:2px solid #999; border-radius:0.5em; padding:0.5em; font-size:16px; background:#038fa8; color:#fff; cursor:pointer; 
-	background-image: linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%);
-	background-image: -o-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%);
-	background-image: -moz-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%);
-	background-image: -webkit-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%);
-	background-image: -ms-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%);
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.36, #02768A),
-		color-stop(0.52, #3E8A94),
-		color-stop(0.84, #287D8A)
-	);
+.add-to-cart .button, .checkout-button, #place_order.button, .single_add_to_cart_button { border:2px solid #999; border-radius:0.5em; padding:0.5em; font-size:16px; background:#038fa8; color:#fff; cursor:pointer; 
+	background-image: linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%) !important;
+	background-image: -o-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%) !important;
+	background-image: -moz-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%) !important;
+	background-image: -webkit-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%) !important;
+	background-image: -ms-linear-gradient(bottom, #02768A 36%, #3E8A94 52%, #287D8A 84%) !important;
 }
 .add-to-cart .button:hover, a.checkout-button:hover { opacity:0.9; text-shadow:none; color:#fff; }
 .button:active { position:relative; top:2px; left:2px; }

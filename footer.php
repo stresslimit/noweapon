@@ -4,7 +4,7 @@
 	<footer>
 		<p>
 			contact: <span id="mail049293493956639bcc8724dc1b05884c">i [at] noweapon [dot] org</span><script language="javascript" type="text/javascript">document.getElementById('mail049293493956639bcc8724dc1b05884c').style.display='none';document.write('<a hr'+'ef="mai'+'lto:i'+'@'+'noweapon'+'.'+'org">'+'i'+'@'+'now'+'eapon'+'.'+'or'+'g'+'</'+'a>');</script>
-			&nbsp; made with love in Montreal
+			&nbsp; made with love in Montreal & NYC
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" class="cc"><img alt="Creative Commons License" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a>
 		</p>
 	</footer>

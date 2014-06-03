@@ -57,13 +57,15 @@
 
   <section class="second-block">
 
+    <h1 class="supersize">thoughts</h1>
+
     <div>
 
       <?php
 
       $sticky = get_option( 'sticky_posts' );
       $p = get_posts( array(
-        'numberposts' => 1,
+        'numberposts' => 2,
       	'post__not_in' => $sticky,
       ));
       foreach ( $p as $post ) : setup_postdata($post);

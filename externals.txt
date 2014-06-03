@@ -8,3 +8,4 @@ jw-player-plugin-for-wordpress http://plugins.svn.wordpress.org/jw-player-plugin
 #posts-to-posts http://plugins.svn.wordpress.org/posts-to-posts/trunk/
 simple-page-ordering http://plugins.svn.wordpress.org/simple-page-ordering/trunk/
 sld-custom-content-and-taxonomies http://plugins.svn.wordpress.org/sld-custom-content-and-taxonomies/trunk/
+woocommerce-google-analytics-integration http://plugins.svn.wordpress.org/woocommerce-google-analytics-integration/tags/1.1/

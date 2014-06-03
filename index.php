@@ -2,11 +2,15 @@
 
 	<section>
 
-		<?php if (have_posts()) : while (have_posts()) : the_post();
+		<?php if (have_posts()) : $first = true; while (have_posts()) : the_post();
 
 			get_template_part( 'listing', $post->post_type );
+      if ( $first ) : $first = false; ?>
+      <div>
+      <? endif;
 
 		endwhile; endif; ?>
+      </div>
 
 
 		<div class="more clear">
