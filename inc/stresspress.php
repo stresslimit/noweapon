@@ -56,7 +56,7 @@ function sld_manage_menu_items() {
 	remove_menu_page('link-manager.php'); // Links
 	// remove_menu_page('edit.php'); // Posts
 	remove_menu_page('upload.php'); // Media
-	// remove_menu_page('edit-comments.php'); // Comments
+  remove_menu_page('edit-comments.php'); // Comments
 	// remove_menu_page('edit.php?post_type=page'); // Pages
 	// remove_menu_page('plugins.php'); // Plugins
 	// remove_menu_page('themes.php'); // Appearance
@@ -128,29 +128,6 @@ function sld_admin_body_class( $classes ) {
 }
 add_filter( 'admin_body_class', 'sld_admin_body_class' );
 
-// grab all post meta into $post object [could be resource intensive]
-function setup_postmeta_all( $post=false ) {
-	global $wpdb;
-	// make sure we have a proper $post object, so we can use in templates without args, 
-	// or in special cases where we want to pass the object manually
-	if ( !$post ) global $post;
-	$sql = "
-		SELECT `meta_key`, `meta_value`
-		FROM `$wpdb->postmeta`
-		WHERE `post_id` = $post->ID
-	";
-	$wpdb->query($sql);
-	foreach($wpdb->last_result as $k => $v) {
-		if ( isset ( $post->{$v->meta_key} ) ) {
-			if ( !is_array($post->{$v->meta_key}) ) {
-				$post->{$v->meta_key} = array( $post->{$v->meta_key} );
-			}
-			$post->{$v->meta_key}[] = $v->meta_value;
-		} else
-		$post->{$v->meta_key} = $v->meta_value;
-	};
-	return $post;
-}
 
 // get either the featured image or first image in the post
 function sld_get_post_thumbnail( $postid, $size='thumbnail' ) {
@@ -176,25 +153,26 @@ function sld_post_thumbnail( $postid, $size='thumbnail' ) {
 	echo sld_get_post_thumbnail( $postid, $size );
 }
 
+// Remove width & height from img element
+// From CSS Tricks: http://css-tricks.com/snippets/wordpress/remove-width-and-height-attributes-from-inserted-images/
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+function remove_width_attribute( $html ) {
+   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+   return $html;
+}
 
 /*-----------------------------------
    Stresslimit admin branding
 -------------------------------------*/
 
 function sld_admin_styles() { ?>
-		<style>
-		/* nice client logo for wp login screen	*/
-		#login h1 a { background:url('<?php echo get_bloginfo( 'template_url' ) ?>/images/noweapon-logo-admin.png') 50% top no-repeat; height:180px; background-size:auto; }
-		.login form { position:relative; }
-		/* nice stresslimit kut-korners	*/
-		.login form:after { content:"."; text-indent:-999em; display:block; position:absolute; right:-8px; bottom:-10px; width:26px; height:74px; 
-	/*	background:url('<?php bloginfo('template_url') ?>/images/stresscorner-login.png') right bottom no-repeat;*/
-		background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAABKCAIAAAAqptNuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAj5JREFUeNqsmNuOwjAMREla4P9/EyHxgBDXwg54GZkmaRInfkCrhR7Zk7FjcK/Xa1Ufu93Oe7/dbvE6DANenXP4vzewkMHj8RjHEX+7T/AtC+56vb6f9F5w+i0L7nK5oECymCBejThU6r7RlN3z+ZymqRsOqenqZu9W487ns5wpVWs62dvtJpXKyTIsvoNq0A7H2qdYVEoWO6EJx2bQNRpx9/udFgmFq8OBhW51KsLPeJtwHXDSW6FwFt+hzJRwluzgXpoj9HA1TlukQ3YYmev1OpTM4js0Fqa5HOtCaqU4DqUFx9XhpNI+2UE4PeNSwhXhoBq0o0WWP+xLKuUhdCg2dFyq0iKc9FZ0ulXjdG+lGqsCh0r18tCqXcpxKajPbkrct7LCZXBwLyUrYWVw+sIvES6fXXS1sYyA6RO6H5qKXd6ULDg9fltPlsJFN6U6HOwG09FurcVyKBX6I4PLbkp1uOymVIEr2ZQqcFJpTxwdl9qUSnEcSrV5xXEylBglA30JV7gpleK4YmYv/DxOfwsxpDbHzYRrLZYWMUy6eHbRC98yApCaXqZXpvA6NT3gWo8C6wiE0yyDfJ4Wkd4yG/gHdzqdZHkwnGYEp1NrSdBzZEYvmlqoQ16HwwFzabPZDJ+QQWK08X6/F7uhW2erjaXJ5Ac3PCn3Q+tRIIRouwkjuFAymfLGk+UQZ+HmYlHi6L/RWOn7wePxKNnNZomN6NBevLQ6ZIe7hj9kNgr3fly+JrWD/iHo1lW/6Iz7E2AAoVgTmcr1bUIAAAAASUVORK5CYII=') right bottom no-repeat;
-		 }
-		/* stresslimit logo on dashboard */
-		#icon-index { margin:8px 8px 0 8px; background:transparent url('data:image/png;base64,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') 0 0 no-repeat; }
-		</style>
-		<?php
+  <style>
+  /* nice client logo for wp login screen	*/
+  #login h1 a { background:url('<?php echo get_bloginfo( 'template_url' ) ?>/images/noweapon-logo-admin.png') 50% top no-repeat; width:auto; height:180px; background-size:auto; }
+  .login form { position:relative; }
+  </style>
+  <?php
 }
 add_action('login_head', 'sld_admin_styles');
 add_action('admin_head', 'sld_admin_styles');
@@ -204,12 +182,5 @@ function login_header_url() {
 	return home_url();
 }
 add_filter( 'login_headerurl', 'login_header_url' );
-
-// admin footer branding
-function sld_admin_footer_brand() {
-  	return date("Y") .' <a href="http://stresslimitdesign.com">stresslimitdesign</a> <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">cc</a>';
-} 
-add_filter('admin_footer_text', 'sld_admin_footer_brand');
-
 
 
