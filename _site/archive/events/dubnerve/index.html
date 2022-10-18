@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>you gotta lotta dub nerve</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script>
+$(document).ready(resizebg);
+$(window).resize(resizebg);
+function resizebg() {
+	var w,h,x,y;
+	var ratio = 16/9;
+	x = $(window).width();
+	y = $(window).height();
+	var constrain = x/y > ratio ? 'w' : 'h';
+	if(constrain=='w') {
+		w = x;
+		h = Math.round(x*.56);
+	} else if(constrain=='h') {
+		w = Math.round(y*1.777);
+		h = y;
+	}
+	$('#bg').css({ 'width': w+'px', 'height': h+'px'});
+}
+</script>
+<style>
+body { text-align:center; color:#000; background:#000; font-family:"arial black", sans-serif; font-size:150%; text-transform:uppercase; padding:0; margin:0;
+	text-shadow:
+		1px 1px 0 yellow, 2px 2px 0 yellow, 3px 3px 0 yellow, 
+		-1px -1px 0 yellow, -2px -2px 0 yellow, -3px -3px 0 yellow,
+		1px -1px 0 yellow,
+		-1px 1px 0 yellow
+		;
+	}
+#bg { position:fixed; bottom:0; right:0; z-index:0; }
+#content { position:relative; z-index:1; /*margin:auto; width:800px;*/ }
+h2 { cursor:pointer; }
+h5 { background:yellow; }
+</style>
+</head>
+<body>
+
+<div id="content">
+
+	<h3>Samedi mai 14 May Saturday</h3>
+	<h5>5555 de gaspe studio 307, 10pm, $ 5 $</h5>
+
+	<h1>DUB NERVE</h1>
+	
+	<h3>You gotta lotta <b>NERVE DUB</b></h3>
+	
+	<h2 title="This mans been involved in the Toronto underground dub/roots/reggae scene for at least the past 10 years cos thats when I first heard him play and thats when I first learned that scene existed in Toronto. Having played early pin:ksox events and free outdoors across the city within and without the underground party scene as well you could say K ZAR is a well rounded dub machine who knows how to get all kinds of people moving to the music he loves. This is why otherpeoplesmusic and no weapon are proud to bring him to montreal to continue in this tradition. ">K-ZAR</h2>
+	<h2 title="ITS THE WEEEEEEEEEKEND!!!!!! And Will's in town to remind you. If you caught his set at our halloween party you know he can make a room move with a selection of music from an underground you never knew existed. Now Will comes back to show us exactly how far reaching (far back reaching?) his musical knowledge is and just how to make you move your feet. Plus he's a PARTY ANIMAL so be ready to wake up feeling dirty.">Iron Will</h2>
+	<h2 title="A member of legendary Polish reggae band Gedeon Jerrubaal and later a founder of Dubmatique and Another Kulture Klash you could say Maka Ron has a history with reggae and dub music, you could also say he's made some of that history. Living in Montreal now MakaRon has become an internationally recognized dub producer. This night he will playing a live set showcasing his abilty to blend new and old styles and technology while keeping us on our toes. ">MakaRon</h2>
+	<h2 title="One of Montreal's most experienced and cutting edge gully producers has been feeding the Island with beats, arrangements, and riddims for quite sometime. Known for fusing east Indian music theory and instrumentation with the most noble and innovative styles of hip hop known in the west, Sikh will be showcasing his dub/reggae knowledge for us on this night. And I just showcased my ability to steal a write up and make it my own. ;)">Sikh Knowledge</h2>
+	<h2 title="With all this talk of tradition and history it would be a mistake for us not to give a nod to the future (the future being now), or at least a history of the future. Backdoor may be best known for his nasty electro sets but he knows a little about where the dub met the step as well and with the nerve he's got, he's willing to show you.">Backdoor</h2>
+	<h2 title="Long time programmer on CKUT's Roots, Rock, Rebel radio show and organizer of the monthly Pressure Drop parties. If you know Reggae, Ska, Punk or getting drunk and naked in Montreal then you probably know Aaron. Right now he's standing on a street corner 1/2 drunk, crooning his love to his city. If yr lucky he'll be doing it at DUB NERVE too.">Aaron Maiden</h2>
+	
+</div>
+
+<img id="bg" src="records.jpg">
+</body>
+</html>

@@ -1,0 +1,62 @@
+---
+title: "Records"
+banner: 'images/banner-records.jpg'
+permalink: '/records'
+---
+
+
+<!-- <div class="section"> -->
+  <div class="container">
+
+    {% assign records = site.records | sort: 'cat' | reverse %}
+    {% for record in records %}
+      <div class="section">
+
+        <div class="title-sm">
+          {{ record.cat }}
+        </div>
+
+        <p class="title-md">
+          {{ record.artist }} —
+          <br>
+          {{ record.title }}
+        </p>
+
+
+        <div class="row">
+          <div class="half">
+            <p><a href="{{ record.url }}"><img src="{{ record.cover | asset_url }}" class="record-thumb"></a></p>
+          </div>
+          <div class="half">
+            {% comment %}
+            {{ record.content }}
+            {% endcomment %}
+
+            {% if record.status == 'FORTHCOMING' %}
+            <p>Upcoming release!</p>
+            {% endif %}
+
+
+            {% if record.spotify or record.apple %}
+            <p>Listen :</p>
+            <p>
+              {% if record.spotify %}
+              <a href="{{ record.spotify }}"><img class="icon-md" src="{{ 'images/util/spotify.svg' | asset_url }}" alt=""></a>
+              {% endif %}
+              &nbsp;  &nbsp;
+              {% if record.apple %}
+              <a href="{{ record.apple }}"><img class="icon-md" src="{{ 'images/util/apple.svg' | asset_url }}" alt=""></a>
+              {% endif %}
+            </p>
+            {% endif %}
+
+          </div>
+        </div>
+
+      </div>
+      <p class="title-md">—</p>
+
+    {% endfor %}
+
+  </div>
+<!-- </div> -->

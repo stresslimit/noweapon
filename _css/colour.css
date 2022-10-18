@@ -1,0 +1,8 @@
+
+.bg-dark {
+  color: white;
+}
+.bg-gold {
+  color: white;
+  background: var(--gold);
+}

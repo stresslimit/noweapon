@@ -1,0 +1,40 @@
+---
+title: No Weapon
+timezone: America/New_York
+collections:
+  pages:
+    title: Pages
+    output: true
+    permalink: "/:path"
+  records:
+    title: Records
+    output: true
+    permalink: "/record/:path"
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: default
+- scope:
+    path: ''
+    type: records
+  values:
+    layout: default
+future: true
+permalink: pretty
+include: [
+  _pages
+]
+exclude: [
+  README.md,
+  firebase.json,
+  Gemfile,
+  Gemfile.lock,
+  node_modules,
+  package.json,
+  postcss.config.js,
+  webpack.config.js,
+  webpack.config.babel.js,
+  yarn.lock
+]

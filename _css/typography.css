@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Julius+Sans+One');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Quicksand:300|Sulphur+Point:300|Julius+Sans+One'); */
+
+/* @font-face {
+  font-family: "OsloLight";
+  src: url("/assets/font/Oslo-Light-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "OsloLightItalic";
+  src: url("/assets/font/Oslo-LightItalic-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+} */
+
+body, input, button, textarea {
+  font-family: var(--body-font), sans-serif;
+  font-size: 16px;
+	font-weight: 300;
+  color: var(--text-color);
+  background: white;
+  line-height: 1.1;
+}
+@media (--viewport-xs-only) {
+  body {
+    font-size: 15px;
+  }
+}
+p {
+  margin: 0 0 .8em;
+  line-height: 1.4em;
+}
+li {
+  line-height: 1.4em;
+  margin: 0 0 .8em;
+}
+ul.tight li {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--text-color);
+}
+a,
+nav a:hover,
+nav .active a,
+.button:hover,
+.btn:hover,
+.superlink:hover {
+  text-decoration: underline;
+}
+nav a,
+a:hover,
+.button,
+.btn,
+.superlink {
+  text-decoration: none;
+}
+
+.text-content {
+  font-size: 1.25em;
+}
+.text-content img {
+  width: auto;
+  max-width: 100%;
+}
+
+.main-title {
+  text-shadow: 1rem 1rem #111;
+}
+@media (--viewport-md) {
+  .main-title {
+    max-width: 60%;
+  }
+}
+.title-xxl,
+.title-xl,
+.title-lg,
+.title-md,
+.title-sm
+{
+  font-family: var(--title-font), sans-serif;
+  line-height: 1.1em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.title-xxl, .title-alt-xxl {
+  font-size: 10em;
+}
+.title-xl {
+  font-size: 7.5em;
+}
+.title-lg, .title-alt-lg {
+  font-size: 5em;
+}
+.title-md, .title-alt-md {
+  font-size: 2em;
+}
+.title-sm, .title-alt-sm {
+  font-size: 1.2em;
+}
+.title-xs, .title-alt-xs {
+  font-size: 0.9em;
+}
+.title-xxs, .title-alt-xxs {
+  font-size: 0.75em;
+}
+
+@media (--viewport-xs-only) {
+  .title-xxl, .title-alt-xxl {
+    font-size: 5em;
+  }
+  .title-xl {
+    font-size: 4em;
+  }
+  .title-lg, .title-alt-lg {
+    font-size: 3em;
+  }
+  .title-md, .title-alt-md {
+    font-size: 2.4em;
+  }
+}

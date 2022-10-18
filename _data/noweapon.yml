@@ -1,0 +1,67 @@
+records:
+
+  - title: "Like Mother / Twelve Notes :Répétition"
+    artist: 'Collis Browne'
+    cover: 'images/records/nw011-Repetition-1.jpg'
+    cat: 'NW011'
+    status: FORTHCOMING
+
+  - title: "Coming Out"
+    artist: 'Collis Browne'
+    cover: 'images/records/nw010-coming-out-collis-browne.jpg'
+    cat: 'NW010'
+    status: RELEASED
+
+  # - title: "Work in Parallel"
+  #   artist: 'Collis Browne'
+  #   cover: 'images/records/nw009.jpg'
+  #   cat: 'NW009'
+  #   status: FORTHCOMING
+
+  - title: "FEMINIST"
+    artist: 'Collis Browne'
+    cover: 'images/records/nw008-collis-browne-feminist.jpg'
+    cat: 'NW008'
+    status: RELEASED
+
+  - title: "A Stanger Voice"
+    artist: 'Technical Kidman'
+    cover: 'images/records/nw007.jpg'
+    cat: 'NW007'
+    status: RELEASED
+
+  - title: 'Untitled 7”'
+    artist: 'Cian Éthrie'
+    cover: 'images/records/nw006.jpg'
+    cat: 'NW006'
+    status: RELEASED
+
+  - title: "Living with Women and Cars"
+    artist: 'Beaver Sheppard'
+    cover: 'images/records/nw005.jpg'
+    cat: 'NW005'
+    status: RELEASED
+
+  - title: "L’art d’enfiler les perles"
+    artist: 'Enfant Magique'
+    cover: 'images/records/nw004.jpg'
+    cat: 'NW004'
+    status: RELEASED
+
+  - title: "Misfed"
+    artist: 'Jingo Brown'
+    cover: 'images/records/nw003.jpg'
+    cat: 'NW003'
+    status: RELEASED
+
+  - title: "Cosmic Signals / Collis Browne remix"
+    artist: 'Heart & Soul'
+    cover: 'images/records/nw002.png'
+    cat: 'NW002'
+    status: RELEASED
+
+  - title: "WHY NOT YOU Be Among These Happy Dancers?"
+    artist: 'Collis Browne + Simon Called Peter'
+    cover: 'images/records/nw001.jpg'
+    cat: 'NW001'
+    status: RELEASED
