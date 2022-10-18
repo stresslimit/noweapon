@@ -33,12 +33,12 @@
 
 @media (--viewport-xs-only) {
   .hidden-xs {
-    display: none;
+    display: none !important;
   }
 }
 @media (--viewport-md) {
   .hidden-md {
-    display: none;
+    display: none !important;
   }
 }
 
