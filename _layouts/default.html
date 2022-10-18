@@ -14,6 +14,7 @@
     {{ page.title }}
   </h1>
 
+
 </div>
 
 <div class="headerpage-main-content">
@@ -27,9 +28,11 @@
       <div class="main-content">
 
         {% unless page.banner %}
+        {% unless page.hidetitle %}
         <h1 class="title-lg">
           {{ page.title }}
         </h1>
+        {% endunless %}
         {% endunless %}
 
         {{ content }}
